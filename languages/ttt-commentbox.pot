@@ -1,0 +1,181 @@
+# TTT CommentBox Translation Template
+# Copyright (C) 2025 TTTWorks
+# This file is distributed under the GPL v2 or later.
+msgid ""
+msgstr ""
+"Project-Id-Version: TTT CommentBox 1.0.0\n"
+"Report-Msgid-Bugs-To: https://github.com/tttworks/ttt-commentbox/issues\n"
+"POT-Creation-Date: 2025-06-19 00:00:00+0000\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"PO-Revision-Date: 2025-06-19 00:00:00+0000\n"
+"Last-Translator: Aloysius Luo (TTTWorks)\n"
+"Language-Team: TTTWorks <a@tttworks.com>\n"
+"Language: en_US\n"
+"X-Generator: WP-CLI 2.8.1\n"
+"X-Domain: ttt-commentbox\n"
+
+#: class-ttt-comments-core.php
+msgid "Netizens discuss"
+msgstr ""
+
+#: class-ttt-comments-core.php
+msgid "No comments yet. Be the first to comment!"
+msgstr ""
+
+#: class-ttt-comments-core.php
+msgid "Reply"
+msgstr ""
+
+#: class-ttt-comments-core.php
+msgid "Share your opinion"
+msgstr ""
+
+#: class-ttt-comments-core.php
+msgid "Save my name, email, and website in this browser for the next time I comment."
+msgstr ""
+
+#: class-ttt-comments-core.php
+msgid "Cancel reply"
+msgstr ""
+
+#: class-ttt-comments-core.php
+msgid "Name"
+msgstr ""
+
+#: class-ttt-comments-core.php
+msgid "Email"
+msgstr ""
+
+#: class-ttt-comments-core.php
+msgid "Website"
+msgstr ""
+
+#: class-ttt-comments-core.php
+msgid "Comment"
+msgstr ""
+
+#: class-ttt-comments-core.php
+msgid "Submit A Comment"
+msgstr ""
+
+#: class-ttt-comments-core.php
+msgid "Logged in as %s."
+msgstr ""
+
+#: class-ttt-comments-core.php
+msgid "Log out?"
+msgstr ""
+
+#: class-ttt-comments-core.php
+msgid "Like"
+msgstr ""
+
+#: class-ttt-comments-core.php
+msgid "Like this comment"
+msgstr ""
+
+#: class-ttt-comments-core.php
+msgid "Security verification failed. Please refresh the page and try again."
+msgstr ""
+
+#: class-ttt-comments-core.php
+msgid "Invalid comment ID."
+msgstr ""
+
+#: class-ttt-comments-core.php
+msgid "Comment not found."
+msgstr ""
+
+#: class-ttt-comments-core.php
+msgid "You have already liked this comment."
+msgstr ""
+
+#: class-ttt-comments-core.php
+msgid "You can only like each comment once every 48 hours."
+msgstr ""
+
+#: class-ttt-comments-core.php
+msgid "TTT CommentBox requires PHP %s or higher. You are running %s."
+msgstr ""
+
+#: class-ttt-comments-core.php
+msgid "TTT CommentBox requires WordPress %s or higher. Please update WordPress."
+msgstr ""
+
+#: class-ttt-comments-ajax.php
+msgid "Like failed. Please try again."
+msgstr ""
+
+#: class-ttt-comments-ajax.php
+msgid "Comment submission failed. Please try again."
+msgstr ""
+
+#: class-ttt-comments-elementor-list.php
+msgid "TTT Comments List"
+msgstr ""
+
+#: class-ttt-comments-elementor-form.php
+msgid "TTT Comments Form"
+msgstr ""
+
+#: class-ttt-comments-elementor-list.php
+msgid "List Title"
+msgstr ""
+
+#: class-ttt-comments-elementor-list.php
+msgid "Display Settings"
+msgstr ""
+
+#: class-ttt-comments-elementor-list.php
+msgid "Show Like Button"
+msgstr ""
+
+#: class-ttt-comments-elementor-list.php
+msgid "Use Custom Like Icon"
+msgstr ""
+
+#: class-ttt-comments-elementor-list.php
+msgid "Custom Like Icon"
+msgstr ""
+
+#: class-ttt-comments-elementor-list.php
+msgid "Like Button Text"
+msgstr ""
+
+#: class-ttt-comments-elementor-list.php
+msgid "Avatar"
+msgstr ""
+
+#: class-ttt-comments-elementor-list.php
+msgid "Comment List Style"
+msgstr ""
+
+#: class-ttt-comments-elementor-list.php
+msgid "Replies Style"
+msgstr ""
+
+#: class-ttt-comments-elementor-list.php
+msgid "Like Button Style"
+msgstr ""
+
+#: class-ttt-comments-elementor-form.php
+msgid "Field Labels"
+msgstr ""
+
+#: class-ttt-comments-elementor-form.php
+msgid "Submit Button"
+msgstr ""
+
+#: class-ttt-comments-elementor-form.php
+msgid "Form Style"
+msgstr ""
+
+#: class-ttt-comments-elementor-list.php
+msgid "TTT CommentBox: [ttt_comments_list] only works on singular pages (posts, pages, custom post types)."
+msgstr ""
+
+#: class-ttt-comments-elementor-form.php
+msgid "TTT CommentBox: [ttt_comment_form] only works on singular pages (posts, pages, custom post types)."
+msgstr ""
