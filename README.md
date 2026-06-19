@@ -11,7 +11,7 @@
 
 ## About the Author
 
-**Aloysius Luo** is the founder and CEO of **Tientsin Tesseract Technology (TTTWorks)**, a WordPress development studio based in Tianjin, China. TTTWorks provides WordPress development, web design, and technical consulting services to clients in China, Japan, and worldwide. TTT CommentBox is the first open-source plugin released by TTTWorks — born out of real client needs and refined through production use.
+**Aloysius Luo** is the founder and CEO of **Tientsin Tesseract Technology (TTTWorks)**, a WordPress development studio based in Tianjin, China. TTTWorks provides WordPress development, web design, and technical consulting services to clients in China and worldwide. TTT CommentBox is the first open-source plugin released by TTTWorks — born out of real client needs and refined through production use.
 
 - Website: [tttworks.com](https://tttworks.com)
 - GitHub: [@tttworks](https://github.com/tttworks)
@@ -195,7 +195,7 @@ How to enable:
 
 ## 关于作者
 
-**骆泉** 是 **超方科技（TTTWorks）** 的创始人兼 CEO。超方科技是一家位于中国天津的 WordPress 开发工作室，为中国、日本及全球客户提供 WordPress 开发、网站设计和技术咨询服务。TTT CommentBox 是 TTTWorks 发布的首个开源插件——源于真实客户需求，并在实际生产环境中不断打磨完善。
+**骆泉** 是 **超方科技（TTTWorks）** 的创始人兼 CEO。超方科技是一家位于中国天津的 WordPress 开发工作室，为中国及全球客户提供 WordPress 开发、网站设计和技术咨询服务。TTT CommentBox 是 TTTWorks 发布的首个开源插件——源于真实客户需求，并在实际生产环境中不断打磨完善。
 
 - 网站：[tttworks.com](https://tttworks.com)
 - GitHub：[@tttworks](https://github.com/tttworks)
@@ -379,7 +379,7 @@ TTT CommentBox 是一款专为现代页面构建器设计的完整、轻量级 W
 
 ## 著者について
 
-**駱泉** は、天津に本社を置く WordPress 開発スタジオ **超方科技（TTTWorks）** の創業者兼CEOです。超方科技は中国、日本、および世界中のクライアントに WordPress 開発、ウェブデザイン、技術コンサルティングサービスを提供しています。TTT CommentBox は、超方科技がリリースした初のオープンソースプラグインです。実際のクライアントニーズから生まれ、実運用を通じて磨き上げられました。
+**駱泉** は、天津に本社を置く WordPress 開発スタジオ **超方科技（TTTWorks）** の創業者兼CEOです。超方科技は中国および世界中のクライアントに WordPress 開発、ウェブデザイン、技術コンサルティングサービスを提供しています。TTT CommentBox は、超方科技がリリースした初のオープンソースプラグインです。実際のクライアントニーズから生まれ、実運用を通じて磨き上げられました。
 
 - ウェブサイト：[tttworks.com](https://tttworks.com)
 - GitHub：[@tttworks](https://github.com/tttworks)
