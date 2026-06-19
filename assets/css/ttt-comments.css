@@ -343,7 +343,8 @@
     font-weight: 600;
     font-family: Arial;
     color: #fff;
-    background: #007bff;
+    background: url(../img/submit-icon.svg) no-repeat #007bff;
+    background-position: 22px 12px;
     border: 1px solid #007bff;
     border-radius: 50px;
     cursor: pointer;
