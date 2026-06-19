@@ -11,11 +11,7 @@
 
 ## About the Author
 
-<<<<<<< HEAD
 **Aloysius Luo** is the founder and CEO of **Tientsin Tesseract Technology (TTTWorks)**, a WordPress development studio based in Tianjin, China. TTTWorks provides WordPress development, web design, and technical consulting services to clients in China, Japan, and worldwide. TTT CommentBox is the first open-source plugin released by TTTWorks — born out of real client needs and refined through production use.
-=======
-**Aloysius Luo** is the owner and CEO of **Tientsin Tesseract Technology Co., Ltd. (TTTWorks)**, a WordPress development studio based in Tianjin, China. TTTWorks provides WordPress development, web design, and technical consulting services to clients in China, Japan, and worldwide. TTT CommentBox is the first open-source plugin released by TTTWorks — born out of real client needs and refined through production use.
->>>>>>> 815f03fadde8a14cc9b612114bbbabd783d0a904
 
 - Website: [tttworks.com](https://tttworks.com)
 - GitHub: [@tttworks](https://github.com/tttworks)
@@ -46,29 +42,17 @@ TTT CommentBox is a complete, lightweight WordPress comment system built for mod
 - **Works on Elementor Free** — No Elementor Pro required.
 - **AJAX Likes** — One-click likes, no page reload. Logged-in users: one per comment. Guests: one per IP every 48 hours.
 - **Threaded Replies** — Nested children with independent styling.
-<<<<<<< HEAD
 - **Text Avatar** — Guest visitors see colorful initials instead of Gravatar. Perfect for mainland China sites where Gravatar is slow or blocked.
-=======
-- **🔤 Text Avatar** — Guest visitors see colorful initials instead of Gravatar. Perfect for mainland China sites where Gravatar is slow or blocked.
->>>>>>> 815f03fadde8a14cc9b612114bbbabd783d0a904
 - **Three Editors Support** — Elementor widgets, Gutenberg blocks (under "TTT CommentBox" category), and Classic Editor shortcodes.
 - **Full Style Control** — Customize colors, typography, avatar sizes via Elementor style panel, Gutenberg sidebar, or shortcode attributes.
 - **Zero Conflict with WooCommerce** — Uses `comment_meta` markers alongside WooCommerce Reviews.
 - **Multi-language** — `.pot` file + Chinese (zh_CN) and Japanese (ja) translations.
-<<<<<<< HEAD
 - **Plugin Info Page** — WordPress admin -> TTT CommentBox for a complete product introduction.
-=======
-- **Plugin Info Page** — WordPress admin → TTT CommentBox for a complete product introduction.
->>>>>>> 815f03fadde8a14cc9b612114bbbabd783d0a904
 
 ## Installation
 
 1. Download `ttt-commentbox.zip`
-<<<<<<< HEAD
 2. WordPress Admin -> Plugins -> Add New -> Upload Plugin
-=======
-2. WordPress Admin → Plugins → Add New → Upload Plugin
->>>>>>> 815f03fadde8a14cc9b612114bbbabd783d0a904
 3. Activate, then search "TTT" in Elementor widget panel
 
 Or manually extract to `/wp-content/plugins/` and activate.
@@ -95,11 +79,7 @@ Or manually extract to `/wp-content/plugins/` and activate.
 
 **Way 1 — Visual Configuration (recommended):**
 1. Open a post in the Classic Editor.
-<<<<<<< HEAD
 2. Click the TTT CommentBox button in the toolbar.
-=======
-2. Click the 💬 button in the toolbar ("TTT CommentBox").
->>>>>>> 815f03fadde8a14cc9b612114bbbabd783d0a904
 3. Switch between "Comments List" and "Comments Form" tabs.
 4. Fill in your settings and click "Insert Shortcode".
 
@@ -121,19 +101,11 @@ Display the comment form:
 
 | Attribute | Type | Default | Description |
 |---|---|---|---|
-<<<<<<< HEAD
 | `avatar_size` | number | 32 | Avatar size in pixels (16-128) |
 | `show_like` | 0/1 | 1 | Show or hide the like button |
 | `show_like_image` | 0/1 | 0 | Use a custom like icon image |
 | `like_image_url` | URL | - | URL of the custom like icon |
 | `like_text` | text | - | Custom text next to the like count |
-=======
-| `avatar_size` | number | 32 | Avatar size in pixels (16–128) |
-| `show_like` | 0/1 | 1 | Show or hide the like button |
-| `show_like_image` | 0/1 | 0 | Use a custom like icon image |
-| `like_image_url` | URL | — | URL of the custom like icon |
-| `like_text` | text | — | Custom text next to the like count |
->>>>>>> 815f03fadde8a14cc9b612114bbbabd783d0a904
 | `list_title` | text | TTTWorks Discuss | Title above the comment list |
 | `list_title_show` | 0/1 | 0 | Show or hide the list title |
 | `list_title_color` | hex | #333333 | Title text color |
@@ -162,11 +134,7 @@ Examples:
 | `label_website` | text | Website | Website field label |
 | `label_comment` | text | Comment | Comment textarea label |
 | `label_submit` | text | Submit A Comment | Submit button text |
-<<<<<<< HEAD
 | `label_save_info` | text | Save my name... | GDPR cookie consent text |
-=======
-| `label_save_info` | text | Save my name… | GDPR cookie consent text |
->>>>>>> 815f03fadde8a14cc9b612114bbbabd783d0a904
 | `submit_color` | hex | #ffffff | Button text color |
 | `submit_bg` | hex | #007bff | Button background color |
 
@@ -181,25 +149,15 @@ Examples:
 
 For sites with Chinese visitors, Gravatar is often slow or completely blocked. TTT CommentBox includes a built-in "Text Avatar" mode that generates colorful initial-based avatars for guest comments.
 
-<<<<<<< HEAD
 - **Guests** see the first character(s) of their name in a colored circle. "Alice" -> "A", "Zhang San" -> "Z", "Alice Wang" -> "AW"
-=======
-- **Guests** see the first character(s) of their name in a colored circle. "Alice" → "A", "张三" → "张", "Alice Wang" → "AW"
->>>>>>> 815f03fadde8a14cc9b612114bbbabd783d0a904
 - **Registered users** continue using their Gravatar or local avatar as normal
 - **Colors** are auto-assigned based on name hash — same name always gets the same color
 - **Performance** — no external HTTP requests, zero latency
 
 How to enable:
-<<<<<<< HEAD
 - **Elementor:** Widget settings -> Avatar section -> flip "Text Avatar" on
 - **Gutenberg:** Block settings -> Avatar panel -> toggle "Text Avatar"
 - **Classic Editor:** Toolbar button popup -> check "Text Avatar", or add `text_avatar="1"` to the shortcode
-=======
-- **Elementor:** Widget settings → Avatar section → flip "Text Avatar" on
-- **Gutenberg:** Block settings → Avatar panel → toggle "Text Avatar"
-- **Classic Editor:** Toolbar button popup → check "Text Avatar", or add `text_avatar="1"` to the shortcode
->>>>>>> 815f03fadde8a14cc9b612114bbbabd783d0a904
 
 ## Requirements
 
@@ -237,11 +195,7 @@ How to enable:
 
 ## 关于作者
 
-<<<<<<< HEAD
 **骆泉** 是 **超方科技（TTTWorks）** 的创始人兼 CEO。超方科技是一家位于中国天津的 WordPress 开发工作室，为中国、日本及全球客户提供 WordPress 开发、网站设计和技术咨询服务。TTT CommentBox 是 TTTWorks 发布的首个开源插件——源于真实客户需求，并在实际生产环境中不断打磨完善。
-=======
-**Aloysius Luo** 是 **天津Tesseract科技有限公司（TTTWorks）** 的创始人兼 CEO。TTTWorks 是一家位于中国天津的 WordPress 开发工作室，为中国、日本及全球客户提供 WordPress 开发、网站设计和技术咨询服务。TTT CommentBox 是 TTTWorks 发布的首个开源插件——源于真实客户需求，并在实际生产环境中不断打磨完善。
->>>>>>> 815f03fadde8a14cc9b612114bbbabd783d0a904
 
 - 网站：[tttworks.com](https://tttworks.com)
 - GitHub：[@tttworks](https://github.com/tttworks)
@@ -255,7 +209,6 @@ TTT CommentBox 是一款专为现代页面构建器设计的完整、轻量级 W
 
 ## 为什么开发这个插件
 
-<<<<<<< HEAD
 **痛点：** WordPress 内置评论系统功能可用，但视觉效果陈旧，在使用页面构建器时几乎没有样式控制能力。Elementor 作为全球最流行的 WordPress 页面构建器，本身没有原生评论小组件——开发者要么嵌入默认评论模板（丑陋且依赖主题），要么安装笨重的第三方评论服务。
 
 **TTT CommentBox 解决的问题：**
@@ -603,6 +556,3 @@ TTT CommentBox は、モダンなページビルダー向けに設計された�
 - i18n対応（POTファイル＋中国語・日本語翻訳付き）
 - WooCommerce Compatible — 完全共存
 - `ttt_comment_source`メタによるコメントソース追跡
-=======
-**痛
->>>>>>> 815f03fadde8a14cc9b612114bbbabd783d0a904
