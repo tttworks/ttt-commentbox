@@ -1,0 +1,338 @@
+# Simplified Chinese translation for TTT CommentBox for Elementor
+# Copyright (C) 2025 TTTWorks
+# This file is distributed under the GPL v2 or later.
+msgid ""
+msgstr ""
+"Project-Id-Version: TTT CommentBox 1.0.0\n"
+"Report-Msgid-Bugs-To: https://github.com/tttworks/ttt-commentbox/issues\n"
+"POT-Creation-Date: 2025-06-19 00:00:00+0000\n"
+"PO-Revision-Date: 2025-06-19 00:00:00+0000\n"
+"Last-Translator: Aloysius Luo (TTTWorks)\n"
+"Language-Team: TTTWorks <a@tttworks.com>\n"
+"Language: zh_CN\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: WP-CLI 2.8.1\n"
+"X-Domain: ttt-commentbox\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: class-ttt-comments-core.php
+msgid "TTTWorks Discuss"
+msgstr "网友热议"
+
+#: class-ttt-comments-core.php
+msgid "No comments yet. Be the first to comment!"
+msgstr "暂无评论，快来抢沙发！"
+
+#: class-ttt-comments-core.php
+msgid "Reply"
+msgstr "回复"
+
+#: class-ttt-comments-core.php
+msgid "Share your opinion"
+msgstr "分享你的观点"
+
+#: class-ttt-comments-core.php
+msgid "Name"
+msgstr "姓名"
+
+#: class-ttt-comments-core.php
+msgid "Email"
+msgstr "邮箱"
+
+#: class-ttt-comments-core.php
+msgid "Website"
+msgstr "网站"
+
+#: class-ttt-comments-core.php
+msgid "Comment"
+msgstr "评论"
+
+#: class-ttt-comments-core.php
+msgid "Submit A Comment"
+msgstr "提交评论"
+
+#: class-ttt-comments-core.php
+msgid "Save my name, email, and website in this browser for the next time I comment."
+msgstr "在此浏览器中保存我的姓名、邮箱和网站，以便下次评论时使用。"
+
+#: class-ttt-comments-core.php
+msgid "Cancel reply"
+msgstr "取消回复"
+
+#: class-ttt-comments-core.php
+msgid "Like this comment"
+msgstr "赞这条评论"
+
+#: class-ttt-comments-core.php
+msgid "Like"
+msgstr "赞"
+
+#: class-ttt-comments-core.php
+msgid "Logged in as %s."
+msgstr "已登录为 %s。"
+
+#: class-ttt-comments-core.php
+msgid "Log out?"
+msgstr "退出登录？"
+
+#: class-ttt-comments-ajax.php
+msgid "Security verification failed. Please refresh the page and try again."
+msgstr "安全验证失败，请刷新页面后重试。"
+
+#: class-ttt-comments-ajax.php
+msgid "Invalid comment ID."
+msgstr "无效的评论 ID。"
+
+#: class-ttt-comments-ajax.php
+msgid "Comment not found."
+msgstr "评论未找到。"
+
+#: class-ttt-comments-ajax.php
+msgid "You have already liked this comment."
+msgstr "你已经赞过这条评论了。"
+
+#: class-ttt-comments-ajax.php
+msgid "You can only like each comment once every 48 hours."
+msgstr "同一 IP 每 48 小时只能赞一次。"
+
+#: class-ttt-comments-ajax.php
+msgid "This comment is not from TTT CommentBox."
+msgstr "这条评论不是来自 TTT CommentBox。"
+
+#: class-ttt-comments-ajax.php
+msgid "Like failed. Please try again."
+msgstr "点赞失败，请重试。"
+
+#: class-ttt-comments-ajax.php
+msgid "Comment submission failed. Please try again."
+msgstr "评论提交失败，请重试。"
+
+#: class-ttt-comments-elementor-list.php
+msgid "TTT Comments List"
+msgstr "TTT 评论列表"
+
+#: class-ttt-comments-elementor-form.php
+msgid "TTT Comments Form"
+msgstr "TTT 评论表单"
+
+#: class-ttt-comments-elementor-list.php
+msgid "List Title"
+msgstr "列表标题"
+
+#: class-ttt-comments-elementor-list.php
+msgid "Title Text"
+msgstr "标题文字"
+
+#: class-ttt-comments-elementor-list.php
+msgid "Show Title"
+msgstr "显示标题"
+
+#: class-ttt-comments-elementor-list.php
+msgid "Title Color"
+msgstr "标题颜色"
+
+#: class-ttt-comments-elementor-list.php
+msgid "Title Typography"
+msgstr "标题排版"
+
+#: class-ttt-comments-elementor-list.php
+msgid "Title Padding"
+msgstr "标题内边距"
+
+#: class-ttt-comments-elementor-list.php
+msgid "Display Settings"
+msgstr "显示设置"
+
+#: class-ttt-comments-elementor-list.php
+msgid "Show Like Button"
+msgstr "显示点赞按钮"
+
+#: class-ttt-comments-elementor-list.php
+msgid "Use Custom Like Icon"
+msgstr "使用自定义点赞图标"
+
+#: class-ttt-comments-elementor-list.php
+msgid "Custom Like Icon"
+msgstr "自定义点赞图标"
+
+#: class-ttt-comments-elementor-list.php
+msgid "Like Button Text"
+msgstr "点赞文字"
+
+#: class-ttt-comments-elementor-list.php
+msgid "Avatar"
+msgstr "头像"
+
+#: class-ttt-comments-elementor-list.php
+msgid "Comment List Style"
+msgstr "评论列表样式"
+
+#: class-ttt-comments-elementor-list.php
+msgid "Text Color"
+msgstr "文字颜色"
+
+#: class-ttt-comments-elementor-list.php
+msgid "Comment Text Typography"
+msgstr "评论文字排版"
+
+#: class-ttt-comments-elementor-list.php
+msgid "Comment Padding"
+msgstr "评论内边距"
+
+#: class-ttt-comments-elementor-list.php
+msgid "Comment Border"
+msgstr "评论边框"
+
+#: class-ttt-comments-elementor-list.php
+msgid "Border Radius"
+msgstr "圆角"
+
+#: class-ttt-comments-elementor-list.php
+msgid "Replies Style"
+msgstr "回复区样式"
+
+#: class-ttt-comments-elementor-list.php
+msgid "Background Color"
+msgstr "背景颜色"
+
+#: class-ttt-comments-elementor-list.php
+msgid "Padding"
+msgstr "内边距"
+
+#: class-ttt-comments-elementor-list.php
+msgid "Border"
+msgstr "边框"
+
+#: class-ttt-comments-elementor-list.php
+msgid "Like Button Style"
+msgstr "点赞按钮样式"
+
+#: class-ttt-comments-elementor-list.php
+msgid "Like Text Color"
+msgstr "点赞文字颜色"
+
+#: class-ttt-comments-elementor-list.php
+msgid "Like Hover Color"
+msgstr "悬停颜色"
+
+#: class-ttt-comments-elementor-list.php
+msgid "Liked Color"
+msgstr "已赞颜色"
+
+#: class-ttt-comments-elementor-form.php
+msgid "Form Title"
+msgstr "表单标题"
+
+#: class-ttt-comments-elementor-form.php
+msgid "Field Labels"
+msgstr "字段标签"
+
+#: class-ttt-comments-elementor-form.php
+msgid "Name Label"
+msgstr "姓名标签"
+
+#: class-ttt-comments-elementor-form.php
+msgid "Email Label"
+msgstr "邮箱标签"
+
+#: class-ttt-comments-elementor-form.php
+msgid "Website Label"
+msgstr "网站标签"
+
+#: class-ttt-comments-elementor-form.php
+msgid "Comment Label"
+msgstr "评论标签"
+
+#: class-ttt-comments-elementor-form.php
+msgid "Submit Button Text"
+msgstr "提交按钮文字"
+
+#: class-ttt-comments-elementor-form.php
+msgid "Save Info Text"
+msgstr "保存信息文字"
+
+#: class-ttt-comments-elementor-form.php
+msgid "Show Website Field"
+msgstr "显示网站字段"
+
+#: class-ttt-comments-elementor-form.php
+msgid "Form Style"
+msgstr "表单样式"
+
+#: class-ttt-comments-elementor-form.php
+msgid "Form Text Color"
+msgstr "表单文字颜色"
+
+#: class-ttt-comments-elementor-form.php
+msgid "Form Typography"
+msgstr "表单排版"
+
+#: class-ttt-comments-elementor-form.php
+msgid "Field Padding"
+msgstr "字段内边距"
+
+#: class-ttt-comments-elementor-form.php
+msgid "Field Border"
+msgstr "字段边框"
+
+#: class-ttt-comments-elementor-form.php
+msgid "Submit Button"
+msgstr "提交按钮"
+
+#: class-ttt-comments-elementor-form.php
+msgid "Button Text Color"
+msgstr "按钮文字颜色"
+
+#: class-ttt-comments-elementor-form.php
+msgid "Button Background"
+msgstr "按钮背景"
+
+#: class-ttt-comments-elementor-form.php
+msgid "Button Typography"
+msgstr "按钮排版"
+
+#: class-ttt-comments-elementor-form.php
+msgid "Button Padding"
+msgstr "按钮内边距"
+
+#: class-ttt-comments-elementor-form.php
+msgid "Button Border"
+msgstr "按钮边框"
+
+#: class-ttt-comments-elementor-form.php
+msgid "Button Border Radius"
+msgstr "按钮圆角"
+
+#: class-ttt-comments-elementor-form.php
+msgid "Normal"
+msgstr "常态"
+
+#: class-ttt-comments-elementor-form.php
+msgid "Hover"
+msgstr "悬停"
+
+#: class-ttt-comments-elementor-form.php
+msgid "Hover Background"
+msgstr "悬停背景"
+
+#: class-ttt-comments-elementor-form.php
+msgid "TTT CommentBox: [ttt_comments_list] only works on singular pages (posts, pages, custom post types)."
+msgstr "TTT CommentBox：[ttt_comments_list] 仅在单独页面（文章、页面、自定义文章类型）上有效。"
+
+#: class-ttt-comments-elementor-form.php
+msgid "TTT CommentBox: [ttt_comment_form] only works on singular pages (posts, pages, custom post types)."
+msgstr "TTT CommentBox：[ttt_comment_form] 仅在单独页面（文章、页面、自定义文章类型）上有效。"
+
+#: ttt-commentbox.php
+msgid "Requires PHP %s or higher. You are running %s."
+msgstr "需要 PHP %s 或更高版本，你当前运行的是 %s。"
+
+#: ttt-commentbox.php
+msgid "Requires WordPress %s or higher. Please update WordPress."
+msgstr "需要 WordPress %s 或更高版本，请更新 WordPress。"
+
+#: ttt-commentbox.php
+msgid "Replying to"
+msgstr "回复给："
