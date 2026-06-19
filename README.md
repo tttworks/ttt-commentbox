@@ -1,200 +1,207 @@
 # TTT CommentBox for Elementor
 
+[![Version](https://img.shields.io/badge/version-1.0.0-blue.svg)](https://github.com/tttworks/ttt-commentbox)
+[![License: GPL v2](https://img.shields.io/badge/License-GPL%20v2-green.svg)](https://www.gnu.org/licenses/gpl-2.0.html)
+
+<!--lan-->English · [中文](README.md#中文) · [日本語](README.md#日本語)<!--/lan-->
+
+---
+
+<!--lan EN-->
+## English
+
 **Comments, Reimagined for Elementor.**
 
-A complete, lightweight comment system for WordPress — works seamlessly with Elementor, Gutenberg, Classic Editor, and any theme via Shortcodes. Zero configuration required. Just drag, drop, and go.
+A complete, lightweight comment system for WordPress — works seamlessly with Elementor, Gutenberg, Classic Editor, and any theme via Shortcodes.
 
-**[Repository](https://github.com/tttworks/ttt-commentbox)** · **[Documentation](https://tttworks.com)** · **[Support](https://github.com/tttworks/ttt-commentbox/issues)**
+**[Repository](https://github.com/tttworks/ttt-commentbox)** · **[Website](https://tttworks.com)** · **[Issues](https://github.com/tttworks/ttt-commentbox/issues)**
+<!--/lan EN-->
+
+<!--lan CN-->
+## 中文
+
+**为 Elementor 重塑评论体验。**
+
+一款完整、轻量的 WordPress 评论系统 — 与 Elementor、Gutenberg、经典编辑器及任何主题的短代码无缝协作。
+
+**[仓库](https://github.com/tttworks/ttt-commentbox)** · **[网站](https://tttworks.com)** · **[问题反馈](https://github.com/tttworks/ttt-commentbox/issues)**
+<!--/lan CN-->
+
+<!--lan JA-->
+## 日本語
+
+**Elementor のために再設計されたコメントシステム。**
+
+Elementor、Gutenberg、Classic Editor 以及びショートコード対応のあらゆるテーマとシームレスに連携する、軽量なWordPressコメントシステムです。
+
+**[リポジトリ](https://github.com/tttworks/ttt-commentbox)** · **[ウェブサイト](https://tttworks.com)** · **[イシュー](https://github.com/tttworks/ttt-commentbox/issues)**
+<!--/lan JA-->
 
 ---
 
-## Features
+## ✨ Features / 功能特色 / 機能概要
 
-**Works everywhere:**
-- **Elementor** — Drag in the TTT Comments List and TTT Comments Form widgets
-- **Gutenberg** — Insert via the TTT CommentBox block
-- **Classic Editor / Any Theme** — Use `[ttt_comments_list]` and `[ttt_comment_form]` shortcodes
-- **WooCommerce** — Works on product pages that have WordPress comments enabled
+<!--lan EN-->
+- **Two Elementor Widgets** — TTT Comments List (styled list with AJAX likes) and TTT Comments Form (custom submission form). Search "TTT" in the widget panel.
+- **Works on Elementor Free** — No Elementor Pro required.
+- **AJAX Likes** — One-click likes, no page reload. Logged-in users: one per comment. Guests: one per IP every 48 hours.
+- **Threaded Replies** — Nested children with independent styling.
+- **🔤 Text Avatar** — Guest visitors see colorful initials instead of Gravatar. Perfect for mainland China sites where Gravatar is slow or blocked.
+- **Three Editors Support** — Elementor widgets, Gutenberg blocks (under "TTT CommentBox" category), and Classic Editor shortcodes.
+- **Full Style Control** — Customize colors, typography, avatar sizes via Elementor style panel, Gutenberg sidebar, or shortcode attributes.
+- **Zero Conflict with WooCommerce** — Uses `comment_meta` markers alongside WooCommerce Reviews.
+- **Multi-language** — `.pot` file + Chinese (zh_CN) and Japanese (ja) translations.
+- **Plugin Info Page** — WordPress admin → TTT CommentBox for a complete product introduction.
+<!--/lan EN-->
 
-**Comment list widget:**
-- Displays approved comments in a clean, customizable list
-- Threaded replies (children) with independent styling
-- AJAX-powered like button — no page reload needed
-- Custom like icon and text support
-- Full WordPress comment styling override
-- 🔤 **Text Avatar** — Guests see colored initials instead of Gravatar (ideal for mainland China). Registered users continue with Gravatar normally.
+<!--lan CN-->
+- **双 Elementor 小组件** — TTT Comments List（带 AJAX 点赞的样式化列表）和 TTT Comments Form（自定义评论表单）。在小组件面板中搜索"TTT"。
+- **Elementor 免费版即可使用** — 无需 Elementor Pro。
+- **AJAX 点赞** — 一点即赞，无需页面刷新。登录用户：每条评论可赞一次。访客：同一 IP 每 48 小时可赞一次。
+- **嵌套回复** — 子评论独立样式显示。
+- **🔤 文字头像** — 访客显示彩色首字母，而非 Gravatar 头像。非常适合 Gravatar 访问缓慢或被屏蔽的中国大陆站点。
+- **三种编辑器支持** — Elementor 小组件、Gutenberg 区块（位于"TTT CommentBox"分类下）、经典编辑器短代码。
+- **完整样式控制** — 可通过 Elementor 样式面板、Gutenberg 侧边栏或短代码属性自定义颜色、字体、头像大小。
+- **与 WooCommerce 零冲突** — 使用 `comment_meta` 标记，与 WooCommerce 评价共存。
+- **多语言** — 附带 `.pot` 模板文件及中文（zh_CN）、日语（ja）翻译。
+- **插件介绍页** — WordPress 后台 → TTT CommentBox 查看完整产品介绍。
+<!--/lan CN-->
 
-**Comment form widget:**
-- Clean, styled comment form with responsive layout
-- All labels fully customizable
-- Website field toggle
-- GDPR-compliant cookie consent text
-- Logged-in user detection with "Logged in as X — Log out?" link
+<!--lan JA-->
+- **2つのElementorウィジェット** — TTT Comments List（AJAXいいね付き）と TTT Comments Form（カスタム投稿フォーム）。ウィジェットパネルで"TTT"を検索。
+- **Elementor Freeで動作** — Elementor Pro不要。
+- **AJAXいいね** — ページリロードなしでワンクリックいいね。ログイン済みユーザーは各コメントに1回。ゲストは同一IPから48時間ごとに1回。
+- **スレッド返信** — 入れ子の子コメントを独立したスタイルで表示。
+- **🔤 テキストアバター** — Gravatarの代わりにカラフルなイニシャルを表示。中国本土サイト（Gravatarが遅い・ブロックされている）に最適。
+- **3つのエディタ対応** — Elementorウィジェット、Gutenbergブロック（「TTT CommentBox」カテゴリ）、Classic Editorショートコード。
+- **柔軟なスタイル制御** — Elementorスタイルパネル、Gutenbergサイドバー、ショートコード属性から色・フォント・アバターサイズをカスタマイズ。
+- **WooCommerceと完全共存** — `comment_meta`マーカーでWooCommerceレビューと衝突しない。
+- **多言語対応** — `.pot`ファイル＋中国語（zh_CN）・日本語（ja）翻訳ファイル付き。
+- **プラグイン紹介ページ** — WordPress管理画面 → TTT CommentBox で製品紹介を確認。
+<!--/lan JA-->
 
-**Developer-friendly:**
-- All rendering logic is centralized in one class — easy to extend
-- PSR-4 class autoloading
-- Full i18n support with `.pot` file included
-- Chinese (zh_CN) and Japanese (ja) translations included
-- Hooks and filters for customizations
+---
 
-## Screenshots
+## 📦 Installation / 安装说明 / インストール方法
 
-> _(Screenshots coming soon — the plugin is currently in initial release preparation.)_
+<!--lan EN-->
+1. Download `ttt-commentbox.zip`
+2. WordPress Admin → Plugins → Add New → Upload Plugin
+3. Activate, then search "TTT" in Elementor widget panel
 
-## Requirements
+Or manually extract to `/wp-content/plugins/` and activate.
+<!--/lan EN-->
 
+<!--lan CN-->
+1. 下载 `ttt-commentbox.zip`
+2. WordPress 后台 → 插件 → 安装插件 → 上传插件
+3. 启用后，在 Elementor 小组件面板中搜索"TTT"
+
+或手动解压到 `/wp-content/plugins/` 后启用。
+<!--/lan CN-->
+
+<!--lan JA-->
+1. `ttt-commentbox.zip` をダウンロード
+2. WordPress管理画面 → プラグイン → 新規追加 → プラグインのアップロード
+3. 有効化後、Elementorウィジェットパネルで"TTT"を検索
+
+手動で `/wp-content/plugins/` に解凍して有効化しても構いません。
+<!--/lan JA-->
+
+---
+
+## 🖥️ Requirements / 环境要求 / 動作環境
+
+<!--lan EN-->
 - WordPress 5.8+
 - PHP 7.4+
-- Elementor 3.0+ (optional — only if using the Elementor widgets)
+- Elementor 3.0+ (optional — shortcodes work in any editor)
+<!--/lan EN-->
 
-## Installation
+<!--lan CN-->
+- WordPress 5.8+
+- PHP 7.4+
+- Elementor 3.0+（可选 — 短代码在任何编辑器中均可使用）
+<!--/lan CN-->
 
-### Method 1: Upload via WordPress Admin
-
-1. Download the latest release from the [Releases page](https://github.com/tttworks/ttt-commentbox/releases)
-2. Go to **Plugins → Add New → Upload Plugin**
-3. Upload the `.zip` file
-4. Click **Activate**
-
-### Method 2: Upload via FTP
-
-1. Download and unzip the release
-2. Upload the `ttt-commentbox` folder to `/wp-content/plugins/`
-3. Go to **Plugins** in WordPress admin and activate TTT CommentBox
-
-### Method 3: Install as a Must-Use Plugin (MU-Plugin)
-
-1. Upload the `ttt-commentbox` folder to `/wp-content/mu-plugins/`
-2. The plugin activates automatically
-
-## Usage
-
-### Elementor
-
-1. Edit a page with Elementor
-2. Find **TTT Comments List** and **TTT Comments Form** in the widget panel
-3. Drag them onto your page
-4. Configure the settings in the Elementor panel
-
-### Gutenberg / Classic Editor
-
-On any post or page, add a **Custom HTML** block (Gutenberg) or open the **Text** editor (Classic), and paste:
-
-```html
-[ttt_comments_list]
-[ttt_comment_form]
-```
-
-Both widgets will display at that position.
-
-### Shortcode Options
-
-**Comment List:**
-```
-[ttt_comments_list avatar_size="32" list_title="Customer Reviews" show_like="1"]
-```
-
-**Comment Form:**
-```
-[ttt_comment_form form_title="Leave a Review" show_website="0"]
-```
-
-## Configuration
-
-### Widget Settings (Elementor)
-
-Each widget has two tabs:
-
-**Content tab:**
-- Title text and visibility
-- Like button toggle
-- Custom like icon upload
-- Field labels (form only)
-- Website field toggle (form only)
-
-**Style tab:**
-- Typography (title, comments, form fields)
-- Colors (text, background, borders)
-- Padding and spacing
-- Hover states
-- Responsive controls
-
-### Shortcode Attributes
-
-| Attribute | Default | Description |
-|----------|--------|-------------|
-| `avatar_size` | 32 | Avatar size in pixels |
-| `show_like` | 1 | Show like button (1/0) |
-| `list_title` | "TTTWorks Discuss" | Comment list title |
-| `form_title` | "Share your opinion" | Form title |
-| `show_website` | 1 | Show website field (1/0) |
-| `show_like_image` | 0 | Use custom like icon (1/0) |
-| `like_image_url` | — | URL of custom like icon |
-| `like_text` | — | Custom text next to like count |
-
-| `children_bg` | rgba(247,249,251,1) | Background color for threaded replies area |
-| `text_avatar` | 0 | Guest avatars as colored initials — no Gravatar (1=on) |
-
-## WooCommerce
-
-TTT CommentBox works on WooCommerce product pages with WordPress comments enabled.
-
-1. Enable reviews on your products: **Edit Product → Product Data → Advanced → Enable reviews**
-2. Add a TTT Comments Form widget to your single product template
-3. Comments submitted will appear in both TTT CommentBox and the WooCommerce reviews tab
-
-## Frequently Asked Questions
-
-**Does it work with my theme?**
-Yes. TTT CommentBox uses its own CSS and is designed to look good on any theme. The default styles are minimal and non-intrusive — they override only what's necessary.
-
-**What is Text Avatar and how do I enable it?**
-In the widget/block settings, flip "Text Avatar" to ON. Guest visitors will see colorful initial-based avatars (e.g., "Alice" → "A", "张三" → "张") instead of Gravatar. This is especially useful for Chinese sites where Gravatar is slow or blocked. Registered users are unaffected and continue using their Gravatar.
-
-**Does it create its own database tables?**
-No. TTT CommentBox uses WordPress's built-in comment system as its data source. It stores only like counts and like records in `comment_meta`. No new tables are created.
-
-**Does it work without Elementor?**
-Yes. You can use the shortcodes `[ttt_comments_list]` and `[ttt_comment_form]` in any editor or theme template.
-
-**Can I translate it?**
-Yes. The plugin is fully internationalized. A `.pot` file is included in the `languages/` folder. Translations can be submitted via the [GitHub repository](https://github.com/tttworks/ttt-commentbox).
-
-**Is Gutenberg support included?**
-Basic Gutenberg support is included via shortcodes and dynamic block rendering. Full block editor blocks with dedicated control panels are planned for a future release.
-
-## Changelog
-
-See [CHANGELOG.md](./CHANGELOG.md) for the full version history.
-
-## Contributing
-
-Contributions are welcome! Please read [CONTRIBUTING.md](./CONTRIBUTING.md) before submitting issues or pull requests.
-
-## Credits
-
-- **Author:** [Aloysius Luo](https://github.com/moniterluo) — [TTTWorks](https://tttworks.com)
-- **Organization:** [tttworks](https://github.com/tttworks) on GitHub
-- **Website:** [tttworks.com](https://tttworks.com) — WordPress & Web Development, Tianjin, China
-
-## License
-
-GPL v2 or later.
+<!--lan JA-->
+- WordPress 5.8+
+- PHP 7.4+
+- Elementor 3.0+（任意 — ショートコードはどのエディタでも動作）
+<!--/lan JA-->
 
 ---
 
-```
-TTT CommentBox for Elementor
-Copyright (C) 2025  Aloysius Luo (TTTWorks)
+## 🔗 Links / 相关链接 / リンク
 
-This program is free software: you can redistribute it and/or modify
-it under the terms of the GNU General Public License as published by
-the Free Software Foundation, either version 2 of the License, or
-(at your option) any later version.
+<!--lan EN-->
+- Author: [Aloysius Luo / TTTWorks](https://tttworks.com)
+- GitHub: [@tttworks](https://github.com/tttworks)
+- Report issues: [GitHub Issues](https://github.com/tttworks/ttt-commentbox/issues)
+<!--/lan EN-->
 
-This program is distributed in the hope that it will be useful,
-but WITHOUT ANY WARRANTY; without even the implied warranty of
-MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
-See the GNU General Public License for more details.
-```
+<!--lan CN-->
+- 作者：[Aloysius Luo / TTTWorks](https://tttworks.com)
+- GitHub：[@tttworks](https://github.com/tttworks)
+- 问题反馈：[GitHub Issues](https://github.com/tttworks/ttt-commentbox/issues)
+<!--/lan CN-->
+
+<!--lan JA-->
+- 著者：[Aloysius Luo / TTTWorks](https://tttworks.com)
+- GitHub：[@tttworks](https://github.com/tttworks)
+- イシュー報告：[GitHub Issues](https://github.com/tttworks/ttt-commentbox/issues)
+<!--/lan JA-->
+
+---
+
+## 📄 Changelog / 更新日志 / 変更履歴
+
+### v1.0.0
+
+<!--lan EN-->
+- Initial public release
+- TTT Comments List and TTT Comments Form Elementor widgets
+- Gutenberg block support under "TTT CommentBox" category
+- Classic Editor shortcode support with toolbar popup
+- Shortcode: `[ttt_comments_list]` and `[ttt_comment_form]`
+- Text Avatar mode (colored initials for guest comments)
+- AJAX like system with 48h guest cooldown
+- Custom like icon upload
+- Threaded reply display with independent styling
+- Full style customization via Elementor controls
+- i18n-ready with POT file + zh_CN and ja translations
+- WooCommerce compatible — zero conflict
+- Comment source tracking via `ttt_comment_source` meta
+<!--/lan EN-->
+
+<!--lan CN-->
+- 首次公开发布
+- TTT Comments List 和 TTT Comments Form Elementor 小组件
+- Gutenberg 区块支持（位于"TTT CommentBox"分类下）
+- 经典编辑器短代码支持，含工具栏弹出窗口
+- 短代码：`[ttt_comments_list]` 和 `[ttt_comment_form]`
+- 文字头像模式（访客评论显示彩色首字母）
+- AJAX 点赞系统，访客 48 小时冷却
+- 自定义点赞图标上传
+- 嵌套回复显示，独立样式控制
+- 通过 Elementor 控件实现完整样式定制
+- 国际化就绪，附带 POT 模板及中文、日语翻译
+- 兼容 WooCommerce — 零冲突
+- 通过 `ttt_comment_source` 元数据追踪评论来源
+<!--/lan CN-->
+
+<!--lan JA-->
+- 初の一般公開リリース
+- TTT Comments List および TTT Comments Form Elementorウィジェット
+- Gutenbergブロック対応（「TTT CommentBox」カテゴリ）
+- Classic Editorショートコード対応＋ツールバーポップアップ
+- ショートコード：`[ttt_comments_list]` と `[ttt_comment_form]`
+- テキストアバターモード（ゲストコメントのカラフルなイニシャル）
+- AJAXいいねシステム（ゲスト48時間クールダウン）
+- カスタムいいねアイコンアップロード
+- スレッド返信表示（独立スタイル対応）
+- Elementorコントロールによる完全スタイルカスタマイズ
+- i18n対応（POTファイル＋中国語・日本語翻訳付き）
+- WooCommerceCompatible — 完全共存
+- `ttt_comment_source`メタによるコメントソース追跡
+<!--/lan JA-->
