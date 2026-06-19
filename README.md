@@ -1,6 +1,6 @@
 # TTT CommentBox for Elementor
 
-[![Version](https://img.shields.io/badge/version-1.0.0-blue.svg)](https://github.com/tttworks/ttt-commentbox)
+[![Version](https://img.shields.io/badge/version-1.0.1-blue.svg)](https://github.com/tttworks/ttt-commentbox)
 [![License: GPL v2](https://img.shields.io/badge/License-GPL%20v2-green.svg)](https://www.gnu.org/licenses/gpl-2.0.html)
 
 [English](README.md#english) · [中文](README.md#中文) · [日本語](README.md#日本語)

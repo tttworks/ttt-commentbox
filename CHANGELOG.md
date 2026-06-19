@@ -2,6 +2,11 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.0.1] - 2026-06-19
+
+### Changed
+- Add SVG submit icon to comment form button
+
 ## [1.0.0] - 2025-06-19
 
 ### Added

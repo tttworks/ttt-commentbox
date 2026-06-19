@@ -3,7 +3,7 @@
  * Plugin Name: TTT CommentBox for Elementor
  * Plugin URI: https://github.com/tttworks/ttt-commentbox
  * Description: A complete comment system for Elementor pages — custom list display, AJAX likes, threaded replies, and a full comment form. Also supports Gutenberg and Classic Editor via Shortcodes. Zero conflict with WooCommerce Reviews.
- * Version: 1.0.0
+ * Version: 1.0.1
  * Requires at least: 5.8
  * Requires PHP: 7.4
  * Author: Aloysius Luo (TTTWorks)
@@ -23,7 +23,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 // Plugin constants
-define( 'TTT_COMMENTBOX_VERSION', '1.0.0' );
+define( 'TTT_COMMENTBOX_VERSION', '1.0.1' );
 define( 'TTT_COMMENTBOX_PATH',    plugin_dir_path( __FILE__ ) );
 define( 'TTT_COMMENTBOX_URL',     plugin_dir_url( __FILE__ ) );
 define( 'TTT_COMMENTBOX_BASENAME', plugin_basename( __FILE__ ) );

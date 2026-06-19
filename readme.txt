@@ -4,7 +4,7 @@ Tags: comments, elementor, gutenberg, comment form, comment list, reviews, testi
 Requires at least: 5.8
 Tested up to: 6.4
 Requires PHP: 7.4
-Stable tag: 1.0.0
+Stable tag: 1.0.1
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -68,6 +68,9 @@ Yes. All CSS uses the `.ttt-*` prefix and is enqueued from the `assets/css/` fol
 Yes. Works on any page with WordPress comments enabled, including WooCommerce product pages with the Reviews tab enabled.
 
 == Changelog ==
+
+= 1.0.1 =
+* Add SVG submit icon to comment form button
 
 = 1.0.0 =
 * Initial release
