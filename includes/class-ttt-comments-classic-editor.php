@@ -123,7 +123,7 @@ class TTT_Comments_ClassicEditor {
                     <div class="ttt-commentbox-tab-content active" id="ttt-tab-list">
                         <div class="ttt-commentbox-row">
                             <label><?php esc_html_e( 'List Title', 'ttt-commentbox' ); ?></label>
-                            <input type="text" id="ttt-shortcode-list-title" placeholder="Netizens discuss" />
+                            <input type="text" id="ttt-shortcode-list-title" placeholder="TTTWorks Discuss" />
                         </div>
                         <div class="ttt-commentbox-row">
                             <label><?php esc_html_e( 'Avatar Size (px)', 'ttt-commentbox' ); ?></label>

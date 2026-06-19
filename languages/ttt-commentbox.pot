@@ -17,7 +17,7 @@ msgstr ""
 "X-Domain: ttt-commentbox\n"
 
 #: class-ttt-comments-core.php
-msgid "Netizens discuss"
+msgid "TTTWorks Discuss"
 msgstr ""
 
 #: class-ttt-comments-core.php

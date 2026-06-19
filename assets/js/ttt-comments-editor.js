@@ -110,7 +110,7 @@
                             label: __('Title Text', 'ttt-commentbox'),
                             value: attrs.listTitle,
                             onChange: function (v) { setAttr({ listTitle: v }); },
-                            placeholder: 'Netizens discuss',
+                            placeholder: 'TTTWorks Discuss',
                         }),
                         attrs.listTitleShow && ColorPickerControl(
                             __('Title Color', 'ttt-commentbox'),

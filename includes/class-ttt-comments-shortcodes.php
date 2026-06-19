@@ -56,8 +56,8 @@ class TTT_Comments_Shortcodes {
                 'like_image_url'  => '',
                 'like_text'      => '',
                 'comments_color'  => '#333333',
-                'list_title'     => __( 'Netizens discuss', 'ttt-commentbox' ),
-                'list_title_show' => '1',
+                'list_title'     => __( 'TTTWorks Discuss', 'ttt-commentbox' ),
+                'list_title_show' => '0',
                 'list_title_color' => '#333333',
                 'children_bg'     => 'rgba(247, 249, 251, 1)',
                 'text_avatar'    => '0',
@@ -106,7 +106,7 @@ class TTT_Comments_Shortcodes {
         $atts = shortcode_atts(
             array(
                 'form_title'      => __( 'Share your opinion', 'ttt-commentbox' ),
-                'form_title_show' => '1',
+                'form_title_show' => '0',
                 'form_title_color' => '#333333',
                 'form_color'       => '#333333',
                 'submit_color'    => '#ffffff',

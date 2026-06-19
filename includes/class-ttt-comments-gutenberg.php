@@ -143,7 +143,7 @@ class TTT_Comments_Gutenberg {
             'like_image_url'   => isset( $a['likeImageUrl'] ) ? esc_url_raw( $a['likeImageUrl'] ) : '',
             'like_text'        => isset( $a['likeText'] ) ? sanitize_text_field( $a['likeText'] ) : '',
             'comments_color'   => isset( $a['commentsColor'] ) ? sanitize_hex_color( $a['commentsColor'] ) : '#333333',
-            'list_title_text'  => empty( $a['listTitle'] ) ? __( 'Netizens discuss', 'ttt-commentbox' ) : sanitize_text_field( $a['listTitle'] ),
+            'list_title_text'  => empty( $a['listTitle'] ) ? __( 'TTTWorks Discuss', 'ttt-commentbox' ) : sanitize_text_field( $a['listTitle'] ),
             'list_title_show'  => isset( $a['listTitleShow'] ) ? (bool) $a['listTitleShow'] : true,
             'list_title_color' => isset( $a['listTitleColor'] ) ? sanitize_hex_color( $a['listTitleColor'] ) : '#333333',
             'children_bg'      => isset( $a['childrenBg'] ) ? sanitize_text_field( $a['childrenBg'] ) : 'rgba(247, 249, 251, 1)',

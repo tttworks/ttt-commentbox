@@ -18,7 +18,7 @@ msgstr ""
 "Plural-Forms: nplurals=1; plural=0;\n"
 
 #: class-ttt-comments-core.php
-msgid "Netizens discuss"
+msgid "TTTWorks Discuss"
 msgstr "网友热议"
 
 #: class-ttt-comments-core.php

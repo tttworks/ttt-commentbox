@@ -1,84 +1,166 @@
 /**
  * TTT CommentBox — Plugin Introduction Page Styles
  *
+ * Glean-inspired flat design: solid colors, generous whitespace,
+ * large border-radius, no shadows, clean typography.
+ *
+ * Glean palette:
+ *   #343CED — electric blue (primary)
+ *   #D8FD49 — lime (accent)
+ *   #F6F3EB — oatmeal (neutral bg)
+ *   #000000 — black
+ *   #FFFFFF — white
+ *
  * @package TTTWorks/CommentBox
  * @since   1.0.0
  */
 
 /* ================================================================
-   Page Layout
+   Page
    ================================================================ */
 .ttt-intro-page {
-    max-width: 980px;
+    max-width: 1080px;
     margin: 20px auto;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-    color: #1d2327;
-    line-height: 1.6;
-}
-
-.ttt-intro-page * {
-    box-sizing: border-box;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    color: #000;
+    line-height: 1.55;
+    -webkit-font-smoothing: antialiased;
+    background: #F6F3EB;
+    border-radius: 32px;
+    padding: 48px 48px 40px;
 }
 
 /* ================================================================
-   Header
+   Hero — solid blue, no gradient, no shadow
    ================================================================ */
-.ttt-intro-header {
-    text-align: center;
-    padding: 40px 20px 30px;
-    margin-bottom: 20px;
-    background: linear-gradient(135deg, #0073aa 0%, #005a87 100%);
-    border-radius: 8px;
-    color: #fff;
+.ttt-intro-hero {
+    display: flex;
+    align-items: center;
+    gap: 48px;
+    margin-bottom: 60px;
 }
 
-.ttt-intro-header h1 {
-    font-size: 32px;
-    font-weight: 700;
-    margin: 0 0 8px 0;
-    color: #fff;
+.ttt-intro-hero-text {
+    flex: 1;
 }
 
-.ttt-intro-subtitle {
-    font-size: 18px;
-    opacity: 0.92;
-    margin: 0 0 16px 0;
+.ttt-intro-hero-text h1 {
+    font-size: 44px;
+    font-weight: 780;
+    margin: 0 0 14px 0;
+    color: #000;
+    line-height: 1.1;
+    letter-spacing: -1px;
 }
 
-.ttt-intro-meta {
-    font-size: 13px;
-    opacity: 0.78;
+.ttt-intro-hero-text .ttt-intro-subtitle {
+    font-size: 19px;
+    color: #4a4a60;
+    margin: 0 0 20px 0;
+    font-weight: 440;
+    line-height: 1.5;
+}
+
+.ttt-intro-hero-text .ttt-intro-meta {
+    font-size: 14px;
+    color: #6a6a7e;
     margin: 0;
 }
 
-.ttt-intro-meta a {
-    color: #fff;
-    text-decoration: underline;
+.ttt-intro-hero-text .ttt-intro-meta a {
+    color: #343CED;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.ttt-intro-hero-text .ttt-intro-meta a:hover {
+    color: #000;
 }
 
 .ttt-intro-sep {
-    margin: 0 6px;
-    opacity: 0.5;
+    margin: 0 8px;
+    color: #ccc;
+}
+
+.ttt-intro-hero-visual {
+    flex-shrink: 0;
+    width: 180px;
+    height: 180px;
+    background: #343CED;
+    border-radius: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 72px;
+    color: #fff;
+    position: relative;
+}
+
+.ttt-intro-hero-visual::after {
+    content: '';
+    position: absolute;
+    inset: -12px;
+    border: 3px solid #D8FD49;
+    border-radius: 52px;
+    pointer-events: none;
 }
 
 /* ================================================================
-   Quick Links
+   Quick links — inline pill buttons
    ================================================================ */
 .ttt-intro-links {
     display: flex;
-    gap: 10px;
-    justify-content: center;
-    margin-bottom: 32px;
+    gap: 12px;
+    margin-bottom: 60px;
+    flex-wrap: wrap;
+}
+
+.ttt-intro-links .button {
+    border-radius: 100px !important;
+    padding: 10px 24px !important;
+    font-size: 14px !important;
+    font-weight: 500 !important;
+    border: 2px solid #000 !important;
+    background: #000 !important;
+    color: #fff !important;
+    transition: all 0.15s ease;
+    text-decoration: none !important;
+}
+
+.ttt-intro-links .button:hover {
+    background: #343CED !important;
+    border-color: #343CED !important;
 }
 
 /* ================================================================
-   Feature Grid
+   Section headings — flat, no underline
+   ================================================================ */
+.ttt-intro-section-title {
+    font-size: 32px;
+    font-weight: 780;
+    letter-spacing: -0.8px;
+    color: #000;
+    margin: 0 0 36px 0;
+    padding: 0;
+}
+
+.ttt-intro-section-subtitle {
+    font-size: 22px;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+    color: #000;
+    margin: 0 0 16px 0;
+    padding: 0;
+}
+
+/* ================================================================
+   Feature Grid — 3 columns, no card bg, icon + text inline
    ================================================================ */
 .ttt-intro-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 16px;
-    margin-bottom: 32px;
+    gap: 28px;
+    margin-bottom: 60px;
 }
 
 .ttt-intro-grid-two {
@@ -91,204 +173,336 @@
     }
 }
 
-/* ================================================================
-   Feature Card
-   ================================================================ */
 .ttt-intro-card {
     background: #fff;
-    border: 1px solid #dcdcde;
-    border-radius: 6px;
-    padding: 20px;
+    border: 2px solid transparent;
+    border-radius: 20px;
+    padding: 32px 28px;
+    transition: border-color 0.2s ease;
+}
+
+.ttt-intro-card:hover {
+    border-color: #343CED;
 }
 
 .ttt-intro-card-icon {
-    font-size: 32px;
-    line-height: 1.2;
-    margin-bottom: 8px;
+    width: 52px;
+    height: 52px;
+    background: #F6F3EB;
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 28px;
+    margin-bottom: 18px;
 }
 
 .ttt-intro-card h3 {
-    font-size: 16px;
-    font-weight: 600;
+    font-size: 17px;
+    font-weight: 700;
     margin: 0 0 8px 0;
-    color: #1d2327;
+    color: #000;
+    letter-spacing: -0.3px;
 }
 
 .ttt-intro-card p,
 .ttt-intro-card ul {
     font-size: 14px;
-    color: #50575e;
-    margin: 0 0 12px;
+    color: #4a4a60;
+    margin: 0;
+    line-height: 1.6;
 }
 
 .ttt-intro-card li {
     margin-bottom: 6px;
+    color: #4a4a60;
 }
 
 .ttt-intro-card ul {
     padding-left: 20px;
+    margin: 0;
 }
 
 /* ================================================================
-   Sections
+   How-to Sections — full-width with bg
    ================================================================ */
-.ttt-intro-section {
+.ttt-intro-howto {
+    margin-bottom: 60px;
+}
+
+.ttt-intro-howto-block {
     background: #fff;
-    border: 1px solid #dcdcde;
-    border-radius: 6px;
-    padding: 28px 32px;
-    margin-bottom: 20px;
+    border-radius: 24px;
+    padding: 40px 44px;
+    margin-bottom: 28px;
 }
 
-.ttt-intro-section h2 {
-    font-size: 20px;
-    font-weight: 600;
-    margin: 0 0 12px 0;
-    padding-bottom: 12px;
-    border-bottom: 1px solid #f0f0f1;
-    color: #1d2327;
+.ttt-intro-howto-block h2 {
+    font-size: 24px;
+    font-weight: 750;
+    margin: 0 0 10px 0;
+    color: #000;
+    letter-spacing: -0.5px;
 }
 
-.ttt-intro-section h3 {
-    font-size: 16px;
-    font-weight: 600;
-    margin: 20px 0 10px;
-    color: #1d2327;
+.ttt-intro-howto-block p {
+    font-size: 15px;
+    color: #4a4a60;
+    margin: 0 0 24px 0;
+    line-height: 1.6;
 }
 
-.ttt-intro-section p {
-    font-size: 14px;
-    color: #3c434a;
-    margin: 0 0 12px;
-}
-
-.ttt-intro-hint {
-    font-size: 13px !important;
-    color: #8c8f94 !important;
-    margin: 0 0 16px 8px !important;
+.ttt-intro-howto-block h3 {
+    font-size: 18px;
+    font-weight: 700;
+    margin: 28px 0 12px;
+    color: #000;
+    letter-spacing: -0.3px;
 }
 
 /* ================================================================
-   Steps
+   Steps — numbered pills
    ================================================================ */
 .ttt-intro-steps {
-    background: #f6f7f7;
-    border-radius: 6px;
-    padding: 16px 20px;
-    margin: 16px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    margin: 20px 0 28px;
+    padding: 0;
 }
 
 .ttt-intro-step {
-    font-size: 14px;
-    padding: 6px 0;
-    color: #3c434a;
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    font-size: 15px;
+    color: #000;
+    line-height: 1.5;
 }
 
-.ttt-intro-step strong {
-    color: #0073aa;
+.ttt-intro-step-num {
+    flex-shrink: 0;
+    width: 32px;
+    height: 32px;
+    background: #343CED;
+    color: #fff;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    font-weight: 700;
 }
 
 /* ================================================================
-   Notice box
+   Notice — oatmeal bg, no border accent
    ================================================================ */
 .ttt-intro-notice {
-    background: #e7f5ff;
-    border-left: 4px solid #0073aa;
-    padding: 12px 16px;
+    background: #F6F3EB;
+    border-radius: 16px;
+    padding: 20px 24px;
     font-size: 14px;
-    color: #1d2327;
-    border-radius: 4px;
-    margin: 16px 0;
+    color: #000;
+    margin: 24px 0;
+    line-height: 1.7;
+}
+
+.ttt-intro-notice strong {
+    color: #343CED;
+    font-weight: 700;
+}
+
+.ttt-intro-notice code {
+    background: #fff;
+    padding: 2px 8px;
+    border-radius: 6px;
+    font-size: 13px;
+    color: #343CED;
+    font-weight: 500;
 }
 
 /* ================================================================
    Shortcode Block
    ================================================================ */
 .ttt-intro-shortcode-block {
-    background: #f6f7f7;
-    border: 1px solid #dcdcde;
-    border-radius: 6px;
-    padding: 20px 24px;
-    margin: 16px 0;
+    background: #F6F3EB;
+    border-radius: 20px;
+    padding: 28px 32px;
+    margin: 24px 0;
 }
 
 .ttt-intro-shortcode-block h4 {
-    font-size: 16px;
-    font-weight: 600;
+    font-size: 17px;
+    font-weight: 700;
     margin: 0 0 8px 0;
-    color: #1d2327;
+    color: #000;
+}
+
+.ttt-intro-shortcode-block h5 {
+    font-size: 14px;
+    font-weight: 700;
+    margin: 20px 0 10px;
+    color: #000;
+}
+
+.ttt-intro-shortcode-block p {
+    color: #4a4a60;
 }
 
 .ttt-intro-shortcode-block pre {
     background: #fff;
-    border: 1px solid #dcdcde;
-    border-radius: 4px;
-    padding: 12px 16px;
+    border: 2px solid #000;
+    border-radius: 12px;
+    padding: 16px 20px;
     font-size: 13px;
     overflow-x: auto;
-    margin: 12px 0;
+    margin: 14px 0;
+    font-family: "SF Mono", "Menlo", "Consolas", monospace;
 }
 
 .ttt-intro-shortcode-block code {
     font-size: 13px;
+    color: #343CED;
+    font-family: "SF Mono", "Menlo", "Consolas", monospace;
+}
+
+.ttt-intro-shortcode-block pre code {
+    color: #000;
 }
 
 /* ================================================================
-   Params Table
+   Params Table — flat, clean
    ================================================================ */
 .ttt-intro-params {
     width: 100%;
     border-collapse: collapse;
-    margin: 12px 0;
+    margin: 20px 0;
     font-size: 13px;
 }
 
 .ttt-intro-params th {
-    background: #e2e4e7;
+    background: #000;
+    color: #fff;
     text-align: left;
-    padding: 8px 10px;
+    padding: 10px 14px;
     font-weight: 600;
-    font-size: 13px;
-    color: #1d2327;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.6px;
+}
+
+.ttt-intro-params th:first-child {
+    border-radius: 10px 0 0 10px;
+}
+
+.ttt-intro-params th:last-child {
+    border-radius: 0 10px 10px 0;
 }
 
 .ttt-intro-params td {
-    padding: 8px 10px;
-    border-bottom: 1px solid #f0f0f1;
-    color: #3c434a;
+    padding: 10px 14px;
+    border-bottom: 1px solid #e8e8ec;
+    color: #4a4a60;
 }
 
 .ttt-intro-params code {
     font-size: 12px;
-    background: #f0f0f1;
-    padding: 2px 6px;
-    border-radius: 3px;
+    background: #F6F3EB;
+    padding: 2px 8px;
+    border-radius: 5px;
+    color: #343CED;
+    font-weight: 500;
+}
+
+.ttt-intro-params tr:last-child td {
+    border-bottom: none;
+}
+
+/* ================================================================
+   Hint text
+   ================================================================ */
+.ttt-intro-hint {
+    font-size: 13px !important;
+    color: #6a6a7e !important;
+    margin: 0 0 16px 4px !important;
+    padding-left: 18px;
+    border-left: 3px solid #D8FD49;
 }
 
 /* ================================================================
    About Section
    ================================================================ */
 .ttt-intro-about {
-    font-size: 14px;
-    color: #3c434a;
-    line-height: 1.7;
+    font-size: 15px;
+    color: #000;
+    line-height: 1.8;
 }
 
 .ttt-intro-about a {
-    color: #0073aa;
+    color: #343CED;
     text-decoration: none;
+    font-weight: 500;
 }
 
 .ttt-intro-about a:hover {
     text-decoration: underline;
 }
 
+.ttt-intro-about .button {
+    border-radius: 12px !important;
+}
+
 /* ================================================================
-   Footer
+   Footer — clean, minimal
    ================================================================ */
 .ttt-intro-footer {
     text-align: center;
-    padding: 20px;
+    padding: 36px 20px 12px;
     font-size: 13px;
-    color: #8c8f94;
+    color: #6a6a7e;
+}
+
+.ttt-intro-footer a {
+    color: #343CED;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.ttt-intro-footer a:hover {
+    text-decoration: underline;
+}
+
+/* ================================================================
+   Responsive
+   ================================================================ */
+@media (max-width: 768px) {
+    .ttt-intro-page {
+        padding: 32px 24px 28px;
+    }
+
+    .ttt-intro-hero {
+        flex-direction: column;
+        gap: 28px;
+        margin-bottom: 40px;
+    }
+
+    .ttt-intro-hero-text h1 {
+        font-size: 34px;
+    }
+
+    .ttt-intro-hero-visual {
+        width: 120px;
+        height: 120px;
+        border-radius: 28px;
+        font-size: 48px;
+    }
+
+    .ttt-intro-hero-visual::after {
+        inset: -8px;
+        border-radius: 36px;
+    }
+
+    .ttt-intro-howto-block {
+        padding: 28px 24px;
+    }
 }
