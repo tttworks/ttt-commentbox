@@ -11,6 +11,7 @@ namespace TTTWorks\CommentBox\Widgets;
 if ( ! defined( 'ABSPATH' ) ) { exit; }
 
 use Elementor\{Widget_Base, Controls_Manager, Group_Control_Typography, Group_Control_Border};
+use TTTWorks\CommentBox\TTT_Comments_Core;
 
 if ( ! class_exists( '\Elementor\Widget_Base' ) ) { return; }
 
@@ -28,7 +29,7 @@ class TTT_Comments_List_Widget extends Widget_Base {
             'label' => __( 'List Title', 'ttt-commentbox' ),
             'tab'   => Controls_Manager::TAB_CONTENT,
         ]);
-        $this->add_control( 'list_title_text', [ 'label' => __( 'Title Text', 'ttt-commentbox' ), 'type' => Controls_Manager::TEXT, 'default' => __( 'Netizens discuss', 'ttt-commentbox' ), 'placeholder' => __( 'Enter title text', 'ttt-commentbox' ) ]);
+        $this->add_control( 'list_title_text', [ 'label' => __( 'Title Text', 'ttt-commentbox' ), 'type' => Controls_Manager::TEXT, 'default' => __( 'TTTWorks Discuss', 'ttt-commentbox' ), 'placeholder' => __( 'Enter title text', 'ttt-commentbox' ) ]);
         $this->add_control( 'list_title_show', [ 'label' => __( 'Show Title', 'ttt-commentbox' ), 'type' => Controls_Manager::SWITCHER, 'label_on' => __( 'Yes', 'ttt-commentbox' ), 'label_off' => __( 'No', 'ttt-commentbox' ), 'return_value' => 'yes', 'default' => 'yes' ]);
         $this->add_control( 'list_title_color', [ 'label' => __( 'Title Color', 'ttt-commentbox' ), 'type' => Controls_Manager::COLOR, 'default' => '#333333', 'condition' => [ 'list_title_show' => 'yes' ] ]);
         $this->add_group_control( Group_Control_Typography::get_type(), [ 'name' => 'list_title_typography', 'label' => __( 'Title Typography', 'ttt-commentbox' ), 'selector' => '{{WRAPPER}} .ttt-comments-title', 'condition' => [ 'list_title_show' => 'yes' ] ]);
@@ -96,7 +97,7 @@ class TTT_Comments_List_Widget extends Widget_Base {
             'like_image_url'    => isset($settings['like_image_url']['url']) ? esc_url_raw($settings['like_image_url']['url']) : '',
             'like_text'         => isset($settings['like_text']) ? sanitize_text_field($settings['like_text']) : '',
             'comments_color'    => isset($settings['comments_text_color']) ? sanitize_hex_color($settings['comments_text_color']) : '#333333',
-            'list_title_text'   => isset($settings['list_title_text']) ? sanitize_text_field($settings['list_title_text']) : __( 'Netizens discuss', 'ttt-commentbox' ),
+            'list_title_text'   => isset($settings['list_title_text']) ? sanitize_text_field($settings['list_title_text']) : __( 'TTTWorks Discuss', 'ttt-commentbox' ),
             'list_title_show'   => 'yes' === ($settings['list_title_show'] ?? ''),
             'list_title_color'  => isset($settings['list_title_color']) ? sanitize_hex_color($settings['list_title_color']) : '#333333',
             'children_bg'       => isset($settings['children_background']) ? sanitize_text_field($settings['children_background']) : 'rgba(247,249,251,1)',

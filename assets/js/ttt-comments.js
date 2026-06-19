@@ -44,15 +44,21 @@
     /**
      * Handle comment like click.
      */
-    $(document).on('click', '.ttt-comment-like', function () {
+    $(document).on('click', '.ttt-comment-like', function (e) {
+        e.stopPropagation();
         var $btn       = $(this);
         var commentId  = $btn.data('comment-id');
         var userIp     = $btn.data('ip');
 
-        // Already liked
+        // Already liked — show alert
         if ($btn.hasClass('ttt-liked')) {
-            return;
+            alert(i18n.alreadyLiked || 'You have already liked this comment.');
+            return false;
         }
+
+        // Prevent double-clicks
+        if ($btn.data('loading')) return false;
+        $btn.data('loading', true);
 
         $.ajax({
             url: ajaxUrl,
@@ -75,7 +81,12 @@
                 console.warn('[TTT CommentBox] Like request failed.');
                 alert(i18n.likeFailed || 'Like failed. Please try again.');
             },
+            complete: function () {
+                $btn.data('loading', false);
+            },
         });
+
+        return false;
     });
 
     /**
@@ -108,38 +119,6 @@
         $('#ttt-comment-parent').val('0');
         $('#ttt-reply-info').hide();
         $('#ttt-reply-to-text').text('');
-    });
-
-    /**
-     * Handle comment form submission.
-     * Submit via standard WordPress flow (page reload) but with better UX.
-     */
-    $(document).on('submit', '#ttt-commentform.ttt-commentform', function (e) {
-        e.preventDefault();
-
-        var $form  = $(this);
-        var action = $form.attr('action');
-        var data   = $form.serialize();
-
-        $.ajax({
-            url: action,
-            type: 'POST',
-            data: data,
-            dataType: 'html',
-            success: function () {
-                // Reload the page to show the new comment
-                var url = window.location.href;
-
-                // Remove any hash fragments to avoid weird scrolling
-                url = url.split('#')[0];
-
-                window.location.href = url + '#respond';
-                window.location.reload(true);
-            },
-            error: function () {
-                alert(i18n.submitFailed || 'Comment submission failed. Please try again.');
-            },
-        });
     });
 
     /**
@@ -193,23 +172,4 @@
                     }
 
                     $wrapper.data('ttt-initialized', false);
-                    initAll();
-                }
-            );
-        }
-    }
-
-    /**
-     * Bootstrap on DOM ready.
-     */
-    $(document).ready(function () {
-        initAll();
-        bindElementorHooks();
-    });
-
-    // Also re-initialize after Elementor frontend scripts load
-    $(window).on('load', function () {
-        setTimeout(initAll, 200);
-    });
-
-})();
+      

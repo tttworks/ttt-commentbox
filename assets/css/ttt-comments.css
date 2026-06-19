@@ -1,51 +1,47 @@
 /**
  * TTT CommentBox — Frontend Styles
  *
+ * Based on Z-Comments-widget-CSS v1.2.0
+ *
  * @package TTTWorks/CommentBox
  * @since   1.0.0
  * @author  Aloysius Luo (TTTWorks) — https://tttworks.com
  */
 
 /* ================================================================
-   CSS Custom Properties (for easy theming)
-   ================================================================ */
-:root {
-    --ttt-commentbox-font-family: inherit;
-    --ttt-commentbox-primary: #007bff;
-    --ttt-commentbox-text: #333333;
-    --ttt-commentbox-text-muted: #666666;
-    --ttt-commentbox-border: #e0e0e0;
-    --ttt-commentbox-bg: #ffffff;
-    --ttt-commentbox-bg-alt: rgba(247, 249, 251, 1);
-}
-
-/* ================================================================
    Comment Wrapper
    ================================================================ */
-.ttt-comments-wrapper {
-    font-family: var(--ttt-commentbox-font-family);
-    color: var(--ttt-commentbox-text);
+.ttt-comments-wrapper,
+.ttt-comments-form-wrapper {
+    width: 100%;
+    font-family: Arial;
 }
 
 /* ================================================================
    Comment List Title
    ================================================================ */
-.ttt-comments-title {
-    font-size: 1.25em;
-    font-weight: 600;
-    margin: 0 0 1.5rem 0;
-    padding: 0;
-    line-height: 1.4;
+.ttt-comments-title,
+.ttt-comment-form-title {
+    margin: 0 0 40px 0;
+    font-size: 16px;
+    font-weight: 700;
+    padding: 0 0 0 10px;
+    border-left: 6px solid rgba(0, 74, 143, 1);
+    font-family: Arial;
+    position: relative;
+}
+
+.ttt-comments-list {
+    margin-bottom: 0;
 }
 
 /* ================================================================
-   Comment List
+   Comment List — no list-style numbers
    ================================================================ */
-.ttt-comments-ol,
-.ttt-comments-list ul {
+.ttt-comments-ol {
     list-style: none;
-    margin: 0;
     padding: 0;
+    margin: 0;
 }
 
 /* ================================================================
@@ -53,13 +49,13 @@
    ================================================================ */
 .ttt-comment-item {
     display: flex;
-    gap: 1rem;
-    padding: 1.25rem 0;
-    border-bottom: 1px solid var(--ttt-commentbox-border);
+    gap: 15px;
+    padding: 15px 0;
+    border-top: 1px dashed #e7e7e7;
 }
 
 .ttt-comment-item:first-child {
-    padding-top: 0;
+    border-top: none;
 }
 
 .ttt-comment-item:last-child {
@@ -73,9 +69,10 @@
     flex-shrink: 0;
 }
 
+.ttt-comment-avatar .avatar,
 .ttt-comment-avatar img {
     border-radius: 50%;
-    display: block;
+    object-fit: cover;
 }
 
 /* ================================================================
@@ -88,31 +85,37 @@
 
 .ttt-comment-meta {
     display: flex;
-    align-items: baseline;
-    gap: 0.75rem;
-    margin-bottom: 0.5rem;
     flex-wrap: wrap;
+    gap: 10px;
+    align-items: baseline;
+    margin-bottom: 8px;
 }
 
 .ttt-comment-author {
     font-weight: 600;
-    font-size: 0.95em;
-    color: var(--ttt-commentbox-text);
+    font-size: 14px;
+    color: #333;
+    font-family: Arial;
 }
 
 .ttt-comment-date {
-    font-size: 0.8em;
-    color: var(--ttt-commentbox-text-muted);
+    font-size: 12px;
+    color: #999;
+    cursor: default;
+    font-family: Arial;
 }
 
 .ttt-comment-content {
+    font-size: 14px;
     line-height: 1.6;
-    margin-bottom: 0.75rem;
+    color: #333;
     word-break: break-word;
+    font-family: Arial;
 }
 
 .ttt-comment-content p {
-    margin: 0 0 0.5em 0;
+    margin: 0 0 8px;
+    font-family: Arial;
 }
 
 .ttt-comment-content p:last-child {
@@ -123,105 +126,133 @@
    Comment Actions (Like + Reply)
    ================================================================ */
 .ttt-comment-actions {
+    margin-top: 8px;
     display: flex;
+    gap: 15px;
     align-items: center;
-    gap: 1rem;
-    flex-wrap: wrap;
 }
 
-.ttt-comment-like,
-.ttt-comment-reply a {
+.ttt-comment-like {
     display: inline-flex;
     align-items: center;
-    gap: 0.3rem;
-    font-size: 0.85em;
+    gap: 5px;
+    font-size: 14px;
+    color: #666;
     cursor: pointer;
-    color: var(--ttt-commentbox-text-muted);
-    text-decoration: none;
-    background: none;
-    border: none;
-    padding: 0;
-    font-family: inherit;
-    transition: color 0.2s ease;
-}
-
-.ttt-comment-like:hover {
-    color: var(--ttt-commentbox-primary);
-}
-
-.ttt-comment-like.ttt-liked {
-    color: #e74c3c;
+    font-family: Arial;
 }
 
 .ttt-like-icon {
-    width: 16px;
-    height: 16px;
+    width: 17px;
+    height: 17px;
+    background: #fff;
+    border: 0;
+    border-radius: 2px;
+    cursor: pointer;
     vertical-align: middle;
 }
 
-.ttt-like-count {
-    font-weight: 500;
-    min-width: 1ch;
+.ttt-like-text {
+    font-size: 14px;
+    font-family: Arial;
+}
+
+.ttt-comment-like.ttt-liked {
+    color: #e57373;
+}
+
+.ttt-comment-reply a {
+    font-size: 14px;
+    color: rgba(102, 102, 102, 1);
+    text-decoration: none;
+    font-family: Arial;
+}
+
+.ttt-comment-reply a:hover {
+    color: #004A8F;
+    text-decoration: none;
 }
 
 /* ================================================================
-   Children (Threaded Replies)
+   Children (Threaded Replies) — 层级缩进 + 背景色区分
    ================================================================ */
 .ttt-children {
     list-style: none;
-    margin: 1rem 0 0 0;
-    padding: 0;
+    padding: 10px 20px;
+    margin: 0 0 20px 40px;
+    background-color: rgba(247, 249, 251, 1);
     border-radius: 10px;
 }
 
-.ttt-children .ttt-comment-item {
-    padding: 1rem 1.25rem;
-    border-bottom: none;
-    background-color: var(--ttt-commentbox-bg-alt);
+.ttt-children .ttt-children {
+    margin-left: 30px;
 }
 
-.ttt-children .ttt-comment-item:first-child {
-    padding-top: 1rem;
+.ttt-children .ttt-comment-item {
+    border-bottom: 1px dashed #e7e7e7;
 }
 
 .ttt-children .ttt-comment-item:last-child {
-    padding-bottom: 1rem;
+    border-bottom: none;
 }
 
 /* ================================================================
    No Comments Message
    ================================================================ */
 .ttt-no-comments {
-    color: var(--ttt-commentbox-text-muted);
-    font-style: italic;
     text-align: center;
-    padding: 2rem 0;
+    color: #999;
+    font-size: 14px;
+    padding: 30px 0;
+    font-family: Arial;
+}
+
+/* ================================================================
+   Logged-in User Status
+   ================================================================ */
+.ttt-logged-in-as {
+    margin-bottom: 15px;
+    padding: 10px 15px;
+    background: #f5f5f5;
+    border-radius: 4px;
+    font-size: 14px;
+    color: #333;
+    font-family: Arial;
+}
+
+.ttt-logged-in-as a {
+    color: #007bff;
+    text-decoration: none;
+    font-family: Arial;
+}
+
+.ttt-logged-in-as a:hover {
+    text-decoration: underline;
+}
+
+/* ================================================================
+   Reply Info
+   ================================================================ */
+.ttt-reply-info {
+    margin-bottom: 15px;
+    padding: 10px;
+    background: #f5f5f5;
+    border-radius: 4px;
+    font-size: 14px;
+    font-family: Arial;
 }
 
 /* ================================================================
    Comment Form
    ================================================================ */
-.ttt-comments-form-wrapper {
-    margin-top: 2rem;
+.ttt-comment-form {
+    margin-top: 0;
+    padding-top: 0;
+    border-top: 0 solid #f0f0f0;
 }
 
-.ttt-comment-form-title {
-    font-size: 1.25em;
-    font-weight: 600;
-    margin: 0 0 1.5rem 0;
-    padding: 0;
-    line-height: 1.4;
-}
-
-.ttt-logged-in-as {
-    font-size: 0.9em;
-    color: var(--ttt-commentbox-text-muted);
-    margin-bottom: 1rem;
-}
-
-.ttt-reply-info {
-    margin-bottom: 1rem;
-    font-size: 0.9em;
+.ttt-commentform {
+    max-width: 1280px;
 }
 
 /* ================================================================
@@ -229,58 +260,54 @@
    ================================================================ */
 .ttt-form-row {
     display: flex;
-    gap: 1rem;
     flex-wrap: wrap;
-    margin-bottom: 1rem;
+    gap: 15px;
+    margin-bottom: 15px;
 }
 
 .ttt-form-field {
-    margin-bottom: 1rem;
+    margin-bottom: 15px;
+    width: 100%;
 }
 
 .ttt-form-field-half {
-    flex: 1 1 calc(50% - 0.5rem);
-    min-width: 140px;
+    flex: 1 1 calc(50% - 8px);
+    min-width: calc(50% - 8px);
 }
 
 .ttt-label {
     display: block;
-    font-size: 0.9em;
+    margin-bottom: 10px;
+    font-size: 14px;
     font-weight: 500;
-    margin-bottom: 0.4rem;
-    color: var(--ttt-commentbox-text);
-}
-
-.ttt-label .required {
-    color: #e74c3c;
-    margin-left: 2px;
+    color: #555;
+    font-family: Arial;
 }
 
 .ttt-input,
 .ttt-textarea {
-    width: 100%;
-    padding: 0.6rem 0.75rem;
-    font-size: 0.95em;
-    line-height: 1.5;
-    color: var(--ttt-commentbox-text);
-    background-color: var(--ttt-commentbox-bg);
-    border: 1px solid var(--ttt-commentbox-border);
-    border-radius: 4px;
+    width: 100% !important;
+    padding: 10px 12px !important;
+    font-size: 14px;
+    font-family: Arial;
+    border: 1px solid rgba(0, 74, 143, 0.2) !important;
+    border-radius: 10px !important;
+    background: #fff;
     box-sizing: border-box;
-    transition: border-color 0.2s ease, box-shadow 0.2s ease;
-    font-family: inherit;
+    transition: border-color 0.2s, box-shadow 0.2s !important;
 }
 
 .ttt-input:focus,
 .ttt-textarea:focus {
     outline: none;
-    border-color: var(--ttt-commentbox-primary);
-    box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.15);
+    border-color: #007bff;
+    box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.1);
 }
 
 .ttt-textarea {
     resize: vertical;
     min-height: 120px;
+    line-height: 1.6;
 }
 
 /* ================================================================
@@ -289,14 +316,15 @@
 .ttt-form-checkbox {
     display: flex;
     align-items: flex-start;
-    gap: 0.5rem;
-    font-size: 0.85em;
-    color: var(--ttt-commentbox-text-muted);
+    gap: 8px;
+    font-size: 12px;
+    color: #666;
     line-height: 1.5;
+    font-family: Arial;
 }
 
 .ttt-form-checkbox input[type="checkbox"] {
-    margin-top: 0.2rem;
+    margin-top: 3px;
     flex-shrink: 0;
 }
 
@@ -304,40 +332,31 @@
    Submit Button
    ================================================================ */
 .ttt-form-submit {
-    margin-top: 1.25rem;
+    margin-bottom: 0;
+    text-align: right;
 }
 
 .ttt-submit-btn {
     display: inline-block;
-    padding: 0.65rem 1.5rem;
-    font-size: 0.95em;
-    font-weight: 500;
-    font-family: inherit;
-    border: none;
-    border-radius: 4px;
+    padding: 12px 24px 12px 52px;
+    font-size: 16px;
+    font-weight: 600;
+    font-family: Arial;
+    color: #fff;
+    background: #007bff;
+    border: 1px solid #007bff;
+    border-radius: 50px;
     cursor: pointer;
-    transition: background-color 0.2s ease, transform 0.1s ease;
+    transition: background 0.2s, transform 0.1s;
 }
 
 .ttt-submit-btn:hover {
-    opacity: 0.9;
-    transform: translateY(-1px);
+    background: #0056b3;
+    border-color: #0056b3;
 }
 
 .ttt-submit-btn:active {
-    transform: translateY(0);
-}
-
-/* ================================================================
-   Notice (widget placeholder in non-singular pages)
-   ================================================================ */
-.ttt-commentbox-notice {
-    padding: 1rem;
-    background: #fff3cd;
-    border: 1px solid #ffc107;
-    border-radius: 4px;
-    color: #856404;
-    font-size: 0.9em;
+    transform: scale(0.98);
 }
 
 /* ================================================================
@@ -345,15 +364,15 @@
    ================================================================ */
 @media (max-width: 600px) {
     .ttt-comment-item {
-        gap: 0.75rem;
-    }
-
-    .ttt-form-field-half {
-        flex: 1 1 100%;
-    }
-
-    .ttt-comment-meta {
         flex-direction: column;
-        gap: 0.25rem;
+        gap: 10px;
     }
-}
+
+    .ttt-children {
+        padding-left: 15px;
+        margin: 0;
+    }
+
+    .ttt-input,
+    .ttt-textarea {
+        font-si

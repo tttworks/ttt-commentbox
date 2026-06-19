@@ -126,7 +126,7 @@ Each widget has two tabs:
 |----------|--------|-------------|
 | `avatar_size` | 32 | Avatar size in pixels |
 | `show_like` | 1 | Show like button (1/0) |
-| `list_title` | "Netizens discuss" | Comment list title |
+| `list_title` | "TTTWorks Discuss" | Comment list title |
 | `form_title` | "Share your opinion" | Form title |
 | `show_website` | 1 | Show website field (1/0) |
 | `show_like_image` | 0 | Use custom like icon (1/0) |

@@ -16,6 +16,7 @@ use Elementor\Widget_Base;
 use Elementor\Controls_Manager;
 use Elementor\Group_Control_Typography;
 use Elementor\Group_Control_Border;
+use TTTWorks\CommentBox\TTT_Comments_Core;
 
 if ( ! class_exists( '\Elementor\Widget_Base' ) ) {
     return;
@@ -442,6 +443,4 @@ class TTT_Comments_Form_Widget extends Widget_Base {
             'widget_id'       => 'ttt-comments-el-form-' . $this->get_id(),
         );
 
-        echo wp_kses_post( TTT_Comments_Core::render_form( $form_settings ) );
-    }
-}
+        echo TTT_Comments_Core::render_form(

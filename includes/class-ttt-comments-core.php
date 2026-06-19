@@ -55,11 +55,6 @@ class TTT_Comments_Core {
      * rendered on it — the most reliable way to identify TTT-generated comments
      * without relying on referer headers.
      *
-     * Strategy:
-     *   1. Check if the post contains our CSS class in the content (shortcode rendering)
-     *   2. If so, mark it as TTT CommentBox source
-     *   3. Otherwise leave it unmarked (e.g. WooCommerce reviews, other comment forms)
-     *
      * @since 1.0.0
      *
      * @param int        $comment_id   Comment ID.
@@ -83,29 +78,10 @@ class TTT_Comments_Core {
             return;
         }
 
-        // Check if the post content contains our shortcode or widgets
-        $post = get_post( $post_id );
+        // Check the post meta flag set by render_list() / render_form()
+        $has_commentbox = get_post_meta( $post_id, '_ttt_has_commentbox', true );
 
-        if ( ! $post ) {
-            return;
-        }
-
-        $content = $post->post_content;
-
-        // Check for our shortcodes
-        $has_shortcode = (
-            has_shortcode( $content, 'ttt_comments_list' )
-            || has_shortcode( $content, 'ttt_comment_form' )
-            || has_shortcode( $content, 'ttt_comments' )
-        );
-
-        // Check for our CSS class (rendered by Elementor/Gutenberg widgets)
-        $has_widget_class = (
-            false !== strpos( $content, 'ttt-comments-wrapper' )
-            || false !== strpos( $content, 'ttt-comment-form' )
-        );
-
-        if ( $has_shortcode || $has_widget_class ) {
+        if ( $has_commentbox ) {
             update_comment_meta( $comment_id, 'ttt_comment_source', self::SOURCE );
             error_log( '[TTT CommentBox] Comment marked: ID ' . $comment_id . ' | Post: ' . $post_id );
         }
@@ -170,6 +146,10 @@ class TTT_Comments_Core {
             return '';
         }
 
+        // Flag this post as having TTT CommentBox — used by mark_comment_source
+        // so Elementor/Gutenberg widgets are detected even though post_content is JSON/block markup.
+        update_post_meta( $post_id, '_ttt_has_commentbox', '1' );
+
         // Defaults
         $settings = wp_parse_args(
             $settings,
@@ -180,12 +160,12 @@ class TTT_Comments_Core {
                 'like_image_url'    => '',
                 'like_text'         => '',
                 'comments_color'    => '#333333',
-                'list_title_text'   => __( 'Netizens discuss', 'ttt-commentbox' ),
+                'list_title_text'   => __( 'TTTWorks Discuss', 'ttt-commentbox' ),
                 'list_title_show'   => true,
                 'list_title_color'  => '#333333',
                 'children_bg'       => 'rgba(247, 249, 251, 1)',
                 'widget_id'         => 'ttt-comments-list-' . uniqid(),
-            'text_avatar'         => false,
+                'text_avatar'         => false,
             )
         );
 
@@ -225,7 +205,8 @@ class TTT_Comments_Core {
                     $settings['like_image_url'],
                     $settings['like_text'],
                     $user_id,
-                    $user_ip
+                    $user_ip,
+                    ! empty( $settings['text_avatar'] )
                 );
                 ?>
 
@@ -264,7 +245,8 @@ class TTT_Comments_Core {
         $like_img_url,
         $like_text,
         $user_id,
-        $user_ip
+        $user_ip,
+        $text_avatar = false
     ) {
 
         $args = self::filter_to_ttt_comments(
@@ -298,7 +280,8 @@ class TTT_Comments_Core {
                     $like_img_url,
                     $like_text,
                     $user_id,
-                    $user_ip
+                    $user_ip,
+                    $text_avatar
                 );
             }
             ?>
@@ -328,26 +311,28 @@ class TTT_Comments_Core {
     private static function render_single_comment(
         $comment,
         $avatar_size,
-        $show_like_img,
         $show_like,
+        $show_like_img,
         $like_img_url,
         $like_text,
         $user_id,
-        $user_ip
+        $user_ip,
+        $text_avatar = false
     ) {
 
-        $comment_id       = (int) $comment->comment_ID;
-        $author_name     = get_comment_author( $comment );
+        $comment_id        = (int) $comment->comment_ID;
+        $author_name      = get_comment_author( $comment );
         $comment_date     = get_comment_date( 'M jS G:i', $comment );
         $comment_date_full = get_comment_date( 'M jS, Y', $comment );
-        $comment_content = wpautop( get_comment_text( $comment ) );
-        $avatar          = get_avatar( $comment, $avatar_size, '', $author_name, array( 'force_display' => true ) );
+        $comment_content  = wpautop( get_comment_text( $comment ) );
+        $avatar           = get_avatar( $comment, $avatar_size, '', $author_name, array( 'force_display' => true ) );
+        $author_url       = get_comment_author_url( $comment );
 
-        // 文字头像：如果开启了 text_avatar 功能，则为游客替换为字母头像
-        if ( ! empty( $settings['text_avatar'] ) && empty( $comment->user_id ) ) {
+        // Text avatar for guests
+        if ( $text_avatar && empty( $comment->user_id ) ) {
             $author_name_clean = trim( wp_strip_all_tags( $author_name ) );
             if ( '' === $author_name_clean ) {
-                $author_name_clean = 'V'; // Visitor
+                $author_name_clean = 'V';
             }
             $avatar = self::render_text_avatar( $author_name_clean, $avatar_size );
         }
@@ -378,7 +363,6 @@ class TTT_Comments_Core {
             }
         }
 
-        // Build safe reply author string
         $reply_author = str_replace(
             array( '"', "'" ),
             array( '&quot;', "\\'" ),
@@ -397,7 +381,13 @@ class TTT_Comments_Core {
             <div class="ttt-comment-body">
 
                 <div class="ttt-comment-meta">
-                    <span class="ttt-comment-author"><?php echo esc_html( $author_name ); ?></span>
+                    <span class="ttt-comment-author">
+                        <?php if ( ! empty( $author_url ) ) : ?>
+                            <a href="<?php echo esc_url( $author_url ); ?>" target="_blank" rel="nofollow noopener"><?php echo esc_html( $author_name ); ?></a>
+                        <?php else : ?>
+                            <?php echo esc_html( $author_name ); ?>
+                        <?php endif; ?>
+                    </span>
                     <span class="ttt-comment-date"
                           title="<?php echo esc_attr( $comment_date_full ); ?>">
                         <?php echo esc_html( $comment_date ); ?>
@@ -412,15 +402,19 @@ class TTT_Comments_Core {
 
                     <?php if ( $show_like ) : ?>
                         <?php
-                        $like_icon_html = '';
+                        $default_like_icon = TTT_COMMENTBOX_URL . 'assets/img/like-icon.png';
 
                         if ( $show_like_img && $like_img_url ) {
-                            $like_icon_html = sprintf(
-                                '<img src="%s" alt="%s" class="ttt-like-icon" /> ',
-                                esc_url( $like_img_url ),
-                                esc_attr__( 'Like', 'ttt-commentbox' )
-                            );
+                            $icon_src = $like_img_url;
+                        } else {
+                            $icon_src = $default_like_icon;
                         }
+
+                        $like_icon_html = sprintf(
+                            '<img src="%s" alt="%s" class="ttt-like-icon"> ',
+                            esc_url( $icon_src ),
+                            esc_attr__( 'Like', 'ttt-commentbox' )
+                        );
 
                         $like_text_html = $like_text
                             ? '<span class="ttt-like-text">' . esc_html( $like_text ) . '</span>'
@@ -453,7 +447,7 @@ class TTT_Comments_Core {
         </li>
 
         <?php
-        // Render child comments (threaded replies) — also filter to TTT CommentBox only
+        // Render child comments (threaded replies)
         $child_args = self::filter_to_ttt_comments(
             array(
                 'parent'       => $comment_id,
@@ -477,7 +471,8 @@ class TTT_Comments_Core {
                         $like_img_url,
                         $like_text,
                         $user_id,
-                        $user_ip
+                        $user_ip,
+                        $text_avatar
                     );
                 }
                 ?>
@@ -491,12 +486,6 @@ class TTT_Comments_Core {
     /**
      * Render a text-based avatar instead of an image.
      *
-     * Rules:
-     * - Single word / CJK name: show first character (e.g. "Alice" → "A", "张三" → "张")
-     * - Two+ words: show first character of first two words (e.g. "Alice Wang" → "AW")
-     * - Empty name: show "V" (Visitor)
-     * - Color assigned based on CRC32 hash of the name — same name = same color
-     *
      * @since 1.1.0
      *
      * @param string $name Cleaned author name.
@@ -505,10 +494,8 @@ class TTT_Comments_Core {
      * @return string HTML output.
      */
     private static function render_text_avatar( $name, $size ) {
-        // 提取首字母
         $initials = self::get_initials( $name );
 
-        // 预设背景颜色池，根据名字哈希自动分配
         $colors = array(
             '#e57373', '#f06292', '#ba68c8', '#9575cd', '#64b5f6',
             '#4db6ac', '#81c784', '#ffb74d', '#a1887f', '#90a4ae',
@@ -517,8 +504,7 @@ class TTT_Comments_Core {
         $index = abs( crc32( $name ) ) % count( $colors );
         $bg    = $colors[ $index ];
 
-        // 两个字符时字体略小，防止溢出圆形边界
-        $font_size = strlen( $initials ) > 1
+        $font_size = mb_strlen( $initials, 'UTF-8' ) > 1
             ? round( $size * 0.38 )
             : round( $size * 0.45 );
 
@@ -584,6 +570,9 @@ class TTT_Comments_Core {
             return '';
         }
 
+        // Flag this post as having TTT CommentBox
+        update_post_meta( $post_id, '_ttt_has_commentbox', '1' );
+
         // Defaults
         $settings = wp_parse_args(
             $settings,
@@ -633,7 +622,6 @@ class TTT_Comments_Core {
                     <p class="ttt-logged-in-as">
                         <?php
                         printf(
-                            /* translators: %s: Current user display name */
                             esc_html__( 'Logged in as %s.', 'ttt-commentbox' ),
                             '<strong>' . esc_html( $current_user->display_name ) . '</strong>'
                         );
@@ -659,6 +647,7 @@ class TTT_Comments_Core {
                       method="post"
                       novalidate>
 
+                <?php if ( ! is_user_logged_in() ) : ?>
                     <div class="ttt-form-row">
 
                         <p class="ttt-form-field ttt-form-field-half">
@@ -696,65 +685,6 @@ class TTT_Comments_Core {
                         </p>
 
                     </div>
+                <?php endif; ?>
 
-                    <?php if ( $settings['show_website'] ) : ?>
-                        <p class="ttt-form-field">
-                            <label for="ttt-url" class="ttt-label">
-                                <?php echo esc_html( $settings['label_website'] ); ?>
-                            </label>
-                            <input type="url"
-                                   name="url"
-                                   id="ttt-url"
-                                   class="ttt-input"
-                                   value="<?php echo esc_attr( $commenter['comment_author_url'] ); ?>"
-                                   autocomplete="url" />
-                        </p>
-                    <?php endif; ?>
-
-                    <p class="ttt-form-field">
-                        <label for="ttt-comment" class="ttt-label">
-                            <?php echo esc_html( $settings['label_comment'] ); ?>
-                            <span class="required" aria-hidden="true">*</span>
-                        </label>
-                        <textarea name="comment"
-                                  id="ttt-comment"
-                                  class="ttt-textarea"
-                                  rows="5"
-                                  aria-required="true"
-                                  required></textarea>
-                    </p>
-
-                    <p class="ttt-form-field ttt-form-checkbox">
-                        <label>
-                            <input type="checkbox"
-                                   name="wp-comment-cookies-consent"
-                                   id="ttt-cookies-consent"
-                                   value="yes"
-                                   checked />
-                            <span><?php echo esc_html( $settings['label_save_info'] ); ?></span>
-                        </label>
-                    </p>
-
-                    <p class="ttt-form-submit">
-                        <input type="hidden" name="comment_post_ID" value="<?php echo esc_attr( $post_id ); ?>" id="ttt-comment-post-ID" />
-                        <input type="hidden" name="comment_parent" id="ttt-comment-parent" value="0" />
-                        <button type="submit"
-                                class="ttt-submit-btn"
-                                style="color:<?php echo esc_attr( $settings['submit_color'] ); ?>; background-color:<?php echo esc_attr( $settings['submit_bg'] ); ?>;">
-                            <?php echo esc_html( $settings['label_submit'] ); ?>
-                        </button>
-                    </p>
-
-                </form>
-
-            </div>
-        </div>
-
-        <?php
-
-        return ob_get_clean();
-    }
-}
-
-// Boot the core class to register the comment_post hook
-new TTT_Comments_Core();
+                    <?php if ( $settings['show_website'] ) : 
